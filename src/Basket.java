@@ -10,12 +10,10 @@ public class Basket {
 		this.price = 0;
 	}
 
-	public int compute() {
-		if(!this.books.isEmpty()) {
+	public float compute() {
 			for(Book book:books) {
 				price += book.getPrice();
 			}	
-		}
 		return price;
 	}
 

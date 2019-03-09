@@ -21,15 +21,24 @@ public class BasketTest {
 	
 	@Test
 	public void testEmptyBasketcosts0() {
-		assertEquals(0.0F,this.basket.compute(),0);
+		assertEquals(0.0F,this.basket.calculateShoppingBasket(),0);
 	}
 
 	@Test
 	public void testBuyOneBookcosts8() {
 		Book book = new Book("title1");
 		this.basket.addBook(book);
-		assertEquals(8.0F,this.basket.compute(),0);
+		assertEquals(8.0F,this.basket.calculateShoppingBasket(),0);
 	}
+	
+	@Test
+	public void testBuyTwoDifferentBookscosts15e20() {
+		this.basket.addBook(new Book("title1"));
+		this.basket.addBook(new Book("title2"));
+		assertEquals(15.20F,this.basket.calculateShoppingBasket(),0);
+	}
+	
+	
 	
 
 }

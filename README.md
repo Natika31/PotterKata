@@ -1,11 +1,11 @@
 # PotterKata
 Définition de FINI:
 
-Tous les tests passent
-Les tests expriment l'intention de votre code
-Chaque méthode a moins de 10 lignes
-Les variables et méthodes sont correctement nommées
-Il n'existe plus aucune duplication de code
+	Tous les tests passent
+	Les tests expriment l'intention de votre code
+	Chaque méthode a moins de 10 lignes
+	Les variables et méthodes sont correctement nommées	
+	Il n'existe plus aucune duplication de code
 
 Extrait du livre The Coding Dojo Handbook de Emily Bache
 

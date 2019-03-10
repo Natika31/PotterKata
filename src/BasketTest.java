@@ -21,30 +21,47 @@ public class BasketTest {
 	
 	@Test
 	public void testEmptyBasketcosts0e() {
-		assertEquals(0.0F,this.basket.calculateShoppingBasket(),0);
+		assertEquals(0.0F,this.basket.calculateBasketPrice(),0);
 	}
 
 	@Test
 	public void testBuyOneBookcosts8e() {
-		Book book = new Book("title1");
+		Book book = new Book("TOME1");
 		this.basket.addBook(book);
-		assertEquals(8.0F,this.basket.calculateShoppingBasket(),0);
+		assertEquals(8.0F,this.basket.calculateBasketPrice(),0);
 	}
 	
 	@Test
 	public void testBuyTwoIdenticalBookscosts16e() {
-		Book book = new Book("title1");
+		Book book = new Book("TOME1");
 		this.basket.addBook(book);
 		this.basket.addBook(book);
-		assertEquals(16.0F,this.basket.calculateShoppingBasket(),0);
+		assertEquals(16.0F,this.basket.calculateBasketPrice(),0);
 	}
 	
 	@Test
 	public void testBuyTwoDifferentBookscosts15e20() {
-		this.basket.addBook(new Book("title1"));
-		this.basket.addBook(new Book("title2"));
-		assertEquals(15.20F,this.basket.calculateShoppingBasket(),0);
+		this.basket.addBook(new Book("TOME1"));
+		this.basket.addBook(new Book("TOME2"));
+		assertEquals(15.20F,this.basket.calculateBasketPrice(),0);
 	}
+	
+	@Test
+	public void testBuyThreeBooksIncludingTwoDifferentBookscosts23e2() {
+		this.basket.addBook(new Book("TOME1"));
+		this.basket.addBook(new Book("TOME2"));
+		this.basket.addBook(new Book("TOME1"));
+		assertEquals(23.20F,this.basket.calculateBasketPrice(),0);
+	}
+	
+	@Test
+	public void testBuyThreeDifferentBookscosts21e6() {
+		this.basket.addBook(new Book("TOME2"));
+		this.basket.addBook(new Book("TOME1"));
+		this.basket.addBook(new Book("TOME3"));
+		assertEquals(21.60F,this.basket.calculateBasketPrice(),0);
+	}
+	
 	
 	
 	
